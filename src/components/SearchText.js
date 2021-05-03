@@ -10,8 +10,7 @@ function SearchText() {
       <select
         data-testid="column-filter"
         name="column"
-        onChange={({ target }) => handleFilterNumber(target.name, target.value)}
-      >
+        onChange={({ target }) => handleFilterNumber(target.name, target.value)}>
         {columns.map((column, index) => (
           <option value={column} key={index}>
             {column}
@@ -21,8 +20,7 @@ function SearchText() {
       <select
         data-testid="comparison-filter"
         name="comparison"
-        onChange={({ target }) => handleFilterNumber(target.name, target.value)}
-      >
+        onChange={({ target }) => handleFilterNumber(target.name, target.value)}>
         <option value="maior que">maior que</option>
         <option value="menor que">menor que</option>
         <option value="igual a">igual a</option>
@@ -35,17 +33,16 @@ function SearchText() {
             handleFilterNumber(target.name, target.value)
           }
           type="number"
-          data-testid="value-filter"
-        />
+          data-testid="value-filter"/>
       </label>
       <button
         onClick={handleClickFilter}
         type="button"
-        data-testid="button-filter"
-      >
+        data-testid="button-filter">
         Filtrar
       </button>
       <button type="button">X</button>
+      
     </div>
   );
 }

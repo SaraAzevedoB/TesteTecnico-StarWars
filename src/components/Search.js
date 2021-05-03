@@ -13,8 +13,7 @@ function Search() {
             name="search"
             type="text"
             data-testid="name-filter"
-            onChange={({ target }) => handleFilterName(target.value)}
-          />
+            onChange={({ target }) => handleFilterName(target.value)}/>
         </label>
       </form>
     </div>

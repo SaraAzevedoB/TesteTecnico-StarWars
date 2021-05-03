@@ -66,7 +66,7 @@ function Provider({ children }) {
     setRequestFilter(
       data.filter((planet) => {
         const { column, comparison, value } = filters.filterByNumericValues[0];
-        setColumns(columns.filter((sigleColumn) => sigleColumn !== column));
+        setColumns(columns.filter((Item) => Item !== column));
         if (planet[column] === "unknow") return false;
         switch (comparison) {
           case "maior que":
@@ -83,9 +83,7 @@ function Provider({ children }) {
   };
 
   useEffect(() => {
-    
     RequestAPI();
-  
   }, []);
 
   useEffect(() => {
