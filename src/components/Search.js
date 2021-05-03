@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import StarWarsContext from '../context/StarWarsContext';
+import React, { useContext } from "react";
+import StarWarsContext from "../context/StarWarsContext";
 
 function Search() {
   const { handleFilterName } = useContext(StarWarsContext);
@@ -13,7 +13,7 @@ function Search() {
             name="search"
             type="text"
             data-testid="name-filter"
-            onChange={ ({ target }) => handleFilterName(target.value) }
+            onChange={({ target }) => handleFilterName(target.value)}
           />
         </label>
       </form>

@@ -1,14 +1,17 @@
-import React from 'react';
-import './App.css';
-import Provider from './context/Provider';
-import Planets from './pages/Planets';
+import React from "react";
+import "./App.css";
+import Provider from "./context/Provider";
+import { Table, Search, SearchText } from "./components";
 
 function App() {
   return (
-    <Provider>
-      <img src="./logo.png"/>
-      <Planets />
-    </Provider>
+    <div className="App-header">
+      <Provider>
+        <img width="400px" src="./logo.png" /> <Search />
+        <SearchText />
+        <Table />
+      </Provider>
+    </div>
   );
 }
 

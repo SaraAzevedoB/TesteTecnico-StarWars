@@ -1,40 +1,24 @@
-import React, { useContext } from 'react';
-import StarWarsContext from '../context/StarWarsContext';
-import './table.css';
+import React, { useContext } from "react";
+import StarWarsContext from "../context/StarWarsContext";
+import "./table.css";
 
 function Table() {
-  const { responseFilter } = useContext(StarWarsContext);
-  const cabecalho = [
-    'Nome',
-    'Rotação',
-    'Orbita',
-    'Diametro',
-    'Clima',
-    'Gravidade',
-    'Tipo de solo',
-    'Água na superfice',
-    'Population',
-    'Filmes',
-    'Criado',
-    'Editado',
-  ];
+  const { responseFilter, loading, cabecalho } = useContext(StarWarsContext);
+
+  if (loading) return <h1>Loading...</h1>;
   return (
     <div>
       <table>
         <thead>
           <tr>
-            {cabecalho.map((tipagem, index) => (
-              <th key={ index }>
-                {' '}
-                {tipagem}
-                {' '}
-              </th>
+            {cabecalho.map((headerTable, index) => (
+              <th key={index}>{headerTable}</th>
             ))}
           </tr>
         </thead>
         <tbody>
-          { responseFilter.map((planet) => (
-            <tr key={ planet.name }>
+          {responseFilter.map((planet) => (
+            <tr key={planet.name}>
               <td>{planet.name}</td>
               <td>{planet.rotation_period}</td>
               <td>{planet.orbital_period}</td>
@@ -44,10 +28,10 @@ function Table() {
               <td>{planet.terrain}</td>
               <td>{planet.surface_water}</td>
               <td>{planet.population}</td>
-              
               <td>{planet.films}</td>
               <td>{planet.created}</td>
               <td>{planet.edited}</td>
+              <td>{planet.url}</td>
             </tr>
           ))}
         </tbody>
