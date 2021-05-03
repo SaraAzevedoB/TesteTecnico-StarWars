@@ -7,7 +7,8 @@ function App() {
   return (
     <div className="App-header">
       <Provider>
-        <img width="400px" src="./logo.png" /> <Search />
+        <img width="400px" src="./logo.png" /> 
+        <Search />
         <SearchText />
         <Table />
       </Provider>

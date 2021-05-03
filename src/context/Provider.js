@@ -83,15 +83,17 @@ function Provider({ children }) {
   };
 
   useEffect(() => {
-    setLoading(true);
+    
     RequestAPI();
-    setLoading(false);
+  
   }, []);
 
   useEffect(() => {
+    setLoading(true);
     setRequestFilter(
       data.filter(({ name }) => name.toLowerCase().includes(valueFilter))
     );
+    setLoading(false);
   }, [valueFilter, data]);
 
   const context = {
